@@ -5,8 +5,12 @@ echo "Installing linked modules"
 cd /usr/src/app
 
 for dir in /usr/src/vendor/* ; do
+  FOUND_MODULE=0
+
   if [[ -d $dir ]]; then
     if [ "$(ls -A $dir)" ]; then
+      # If we did find a module then set found module to yes so that we do the npm rebuild below
+      FOUND_MODULE=1
       echo "Manually linking $dir"
       dir_name=$(basename $dir)
       rm -rf /usr/src/app/node_modules/$dir_name
@@ -14,8 +18,11 @@ for dir in /usr/src/vendor/* ; do
     fi
   fi
 
-  echo "Rebuilding linked modules"
-  npm rebuild
+  # Make conditional using the above data
+  if FOUND_MODULE; then
+    echo "Rebuilding linked modules"
+    npm rebuild
+  fi
 done
 
 # BASE_PATH is where we will store all config files dynamically generated at
@@ -123,16 +130,16 @@ else
   echo "Config file link exists."
 fi
 
-/bin/bash -c -- "$@"
+export FARMER_LOGS="/var/log/storj.farmer.log"
 
-FARMER_LOGS="/var/log/storj.farmer.log"
+/bin/bash -c -- "$@"
 
 COUNTER=0
 while [ ! -f "${FARMER_LOGS}" ]; do
   sleep 1;
   ((COUNTER+=1))
 
-  if [[ "${COUNTER}" -eq 10 ]]; then
+  if [[ "${COUNTER}" -eq 100 ]]; then
     echo "Didn't find log file: ${FARMER_LOGS}"
     exit 1;
   fi

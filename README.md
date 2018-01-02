@@ -21,6 +21,7 @@ You'll need Ruby to run the `/.sdk` We recommend using rvm, which you can instal
 + A VPN client (see below under Access Cluster) - Required for OSX and other systems that run the docker engine inside of a VM
 + Ruby ( this is temporary ) - Required to use the ./sdk script
 + NodeJS v6.9.5 or Greater - Required to run the storj cli locally
++ nodemon ( `npm install -g nodemon` ) - Required for watch ( `./sdk -w` )
 
 ### SDK Script (./sdk)
 The `sdk` script wraps most of the functionality that you will need when using docker, docker-compose and vpn for these services.

@@ -64,6 +64,7 @@ services:
     volumes:
       - ./complex/renter.config.json:/root/config.template.json
       - ./complex/hd-private.key:/root/hd-private.key
+      - ./complex/hd-migration-private.key:/root/hd-migration-private.key
       - ./vendor:/usr/src/vendor
     command: ["./bin/storj-complex.js", "-c", "/root/config.json"]
     environment:

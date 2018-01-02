@@ -7,6 +7,7 @@
     "mongoUrl": "mongodb://db:27017/storj-sandbox",
     "mongoOpts": {},
     "networkPrivateExtendedKey": "/root/hd-private.key",
+    "migrationPrivateKey": "/root/hd-migration-private.key",
     "networkIndex": 1,
     "totalRenters": 1,
     "renterOverlap": 0,

@@ -10,14 +10,14 @@
     "0f03020202"
   ],
   "maxOfferConcurrency": 9007199254740991,
-  "bridgeUri": "http://bridge:8080",
+  "bridges": [{
+    "url": "http://bridge:8080",
+    "extendedKey": "xpub6ABDixD5jpQUDWNzHFh2WgAuANKDeTHmeXqLYaXsUuzpvfN8ZvbfBMXXbYkoq1kCvvpbiNE9zAzeC9VQh8dMNDb8mjc8cUh8F4jaUmFkyjr"
+  }],
   "seedList": [
     "storj://renter:4000/337472da3068fa05d415262baf4df5bada8aefdc"
   ],
   "rpcAddress": "{{ IP }}",
-  "renterWhitelist": [
-    "337472da3068fa05d415262baf4df5bada8aefdc"
-  ],
   "rpcPort": 9000,
   "doNotTraverseNat": true,
   "maxTunnels": 0,
@@ -35,6 +35,6 @@
   "loggerVerbosity": 4,
   "loggerOutputFile": "/var/log/storj.farmer.log",
   "storagePath": "{{ STORAGE_PATH }}",
-  "storageAllocation": "5GB",
+  "storageAllocation": "16GB",
   "enableTelemetryReporting": false
 }

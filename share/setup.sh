@@ -139,7 +139,7 @@ while [ ! -f "${FARMER_LOGS}" ]; do
   sleep 1;
   ((COUNTER+=1))
 
-  if [[ "${COUNTER}" -eq 100 ]]; then
+  if [[ "${COUNTER}" -eq 10000 ]]; then
     echo "Didn't find log file: ${FARMER_LOGS}"
     exit 1;
   fi

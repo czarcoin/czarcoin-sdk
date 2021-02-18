@@ -1,6 +1,6 @@
 _**Notice**: Development on this repo is on pause until we finish our v3 rearchitecture. Please see https://github.com/storj/storj for ongoing v3 development._
 
-Storj Developer Kit
+Czarcoin Developer Kit
 ===================
 
 The Storj Developer Kit is designed to enable both Team Members at Storj Labs and Community Members alike to quickly set up a fully working, complete and consistent environment with which to develop, test and experiment.
